@@ -30,16 +30,28 @@ public class Main {
     // Declarative approach ✅
 
     // Filter
-    List<Person> females = people.stream()
-        .filter(person -> person.getGender().equals(Gender.FEMALE))
-        .collect(Collectors.toList());
+//    List<Person> females = people.stream()
+//        .filter(person -> person.getGender().equals(Gender.FEMALE))
+//        .collect(Collectors.toList());
+    List <Person> females = people.stream()
+            .filter(person->person.getGender().equals(Gender.FEMALE))
+            .collect(Collectors.toList());
+
+    //females.forEach(System.out::println);
+
 
 //    females.forEach(System.out::println);
 
     // Sort
+//    List<Person> sorted = people.stream()
+//        .sorted(Comparator.comparing(Person::getAge).thenComparing(Person::getGender).reversed())
+//        .collect(Collectors.toList());
+
     List<Person> sorted = people.stream()
-        .sorted(Comparator.comparing(Person::getAge).thenComparing(Person::getGender).reversed())
-        .collect(Collectors.toList());
+            .sorted(Comparator.comparing(Person::getAge).thenComparing(Person::getGender).reversed())
+            .collect(Collectors.toList());
+    sorted.forEach(System.out::println);
+
 
 //    sorted.forEach(System.out::println);
 
